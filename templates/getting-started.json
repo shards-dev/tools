@@ -1,0 +1,49 @@
+{
+    "numDeployConfirmations": 1,
+  
+    "finalSystemOwner": "<%=process.env.ADMIN_ADDRESS%>",
+    "portalGuardian": "<%=process.env.ADMIN_ADDRESS%>",
+    "controller": "<%=process.env.ADMIN_ADDRESS%>",
+  
+    "l1StartingBlockTag": "<%=process.env.L1STARTINGBLOCKTAG%>",
+  
+    "l1ChainID": <%=process.env.L1_CHAIN_ID%>,
+    "l2ChainID": 42069,
+    "l2BlockTime": 2,
+  
+    "maxSequencerDrift": 600,
+    "sequencerWindowSize": 3600,
+    "channelTimeout": 300,
+  
+    "p2pSequencerAddress": "<%=process.env.SEQUENCER_ADDRESS%>",
+    "batchInboxAddress": "0xff00000000000000000000000000000000042069",
+    "batchSenderAddress": "<%=process.env.BATCHER_ADDRESS%>",
+  
+    "l2OutputOracleSubmissionInterval": 120,
+    "l2OutputOracleStartingBlockNumber": 0,
+    "l2OutputOracleStartingTimestamp": <%=process.env.L2_OUTPUT_ORACLE_TIMESTAMP%>,
+  
+    "l2OutputOracleProposer": "<%=process.env.PROPOSER_ADDRESS%>",
+    "l2OutputOracleChallenger": "<%=process.env.ADMIN_ADDRESS%>",
+  
+    "finalizationPeriodSeconds": 12,
+  
+    "proxyAdminOwner": "<%=process.env.ADMIN_ADDRESS%>",
+    "baseFeeVaultRecipient": "<%=process.env.ADMIN_ADDRESS%>",
+    "l1FeeVaultRecipient": "<%=process.env.ADMIN_ADDRESS%>",
+    "sequencerFeeVaultRecipient": "<%=process.env.ADMIN_ADDRESS%>",
+  
+    "gasPriceOracleOverhead": 2100,
+    "gasPriceOracleScalar": 1000000,
+  
+    "governanceTokenSymbol": "OP",
+    "governanceTokenName": "Optimism",
+    "governanceTokenOwner": "<%=process.env.ADMIN_ADDRESS%>",
+  
+    "l2GenesisBlockGasLimit": "0x1c9c380",
+    "l2GenesisBlockBaseFeePerGas": "0x3b9aca00",
+    "l2GenesisRegolithTimeOffset": "0x0",
+  
+    "eip1559Denominator": 50,
+    "eip1559Elasticity": 10
+  }
