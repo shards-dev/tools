@@ -19,7 +19,6 @@ function buildGettingStarted() {
   };
 }
 
-
 /*
 Injects the correct chainID in the hardhat config file
 */
@@ -36,10 +35,10 @@ function buildHardhatConfig() {
   };
 }
 
-function prepareOpstack() {
+function prepareOPStack() {
   buildGettingStarted();
   buildHardhatConfig();
   return (0);
 }
 
-prepareOpstack();
+prepareOPStack();
