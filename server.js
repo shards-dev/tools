@@ -22,6 +22,7 @@ function buildGettingStarted() {
 /*
 Injects the correct chainID in the hardhat config file
 */
+
 function buildHardhatConfig() {
   const template = fs.readFileSync('templates/hardhat.config.js', 'utf8');
   const renderedHTML = ejs.render(template);

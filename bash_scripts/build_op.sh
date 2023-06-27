@@ -5,8 +5,8 @@ mv /opstack-temp/* /opstack/
 # Run builder and replace files
 cd /opstack/tools/
 node server.js
-cp builds/getting-started.json /opstack/optimism/packages/contracts-bedrock/deploy-config/getting-started.json
-cp builds/hardhat.config.js /opstack/optimism/packages/contracts-bedrock/hardhat.config.js
+cp /opstack/tools/builds/getting-started.json /opstack/optimism/packages/contracts-bedrock/deploy-config/getting-started.json
+cp /opstack/tools/builds/hardhat.config.js /opstack/optimism/packages/contracts-bedrock/hardhat.config.ts
 
 # Deploy Contracts: OK ✅
 cd /opstack/optimism/packages/contracts-bedrock
@@ -21,8 +21,8 @@ go run cmd/main.go genesis l2 \
 --outfile.rollup rollup.json \
 --l1-rpc $L1_RPC
 openssl rand -hex 32 > jwt.txt
-cp genesis.json ~/op-geth
-cp jwt.txt ~/op-geth
+cp genesis.json /opstack/op-geth
+cp jwt.txt /opstack/op-geth
 
 # Initialize op-geth
 cd /opstack/op-geth
