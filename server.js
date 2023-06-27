@@ -24,14 +24,14 @@ Injects the correct chainID in the hardhat config file
 */
 
 function buildHardhatConfig() {
-  const template = fs.readFileSync('templates/hardhat.config.js', 'utf8');
+  const template = fs.readFileSync('templates/hardhat.config.ts', 'utf8');
   const renderedHTML = ejs.render(template);
 
   try {
-    fs.writeFileSync('builds/hardhat.config.js', renderedHTML);
-    console.log('hardhat.config.js build Success');
+    fs.writeFileSync('builds/hardhat.config.ts', renderedHTML);
+    console.log('hardhat.config.ts build Success');
   } catch (err) {
-    console.log('hardhat.config.js buld Failure');
+    console.log('hardhat.config.ts buld Failure');
     console.error(err);
   };
 }
