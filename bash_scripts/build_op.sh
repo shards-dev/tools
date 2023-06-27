@@ -6,7 +6,7 @@ mv /opstack-temp/* /opstack/
 cd /opstack/tools/
 node server.js
 cp /opstack/tools/builds/getting-started.json /opstack/optimism/packages/contracts-bedrock/deploy-config/getting-started.json
-cp /opstack/tools/builds/hardhat.config.js /opstack/optimism/packages/contracts-bedrock/hardhat.config.ts
+cp /opstack/tools/builds/hardhat.config.ts /opstack/optimism/packages/contracts-bedrock/hardhat.config.ts
 
 # Deploy Contracts: OK ✅
 cd /opstack/optimism/packages/contracts-bedrock
