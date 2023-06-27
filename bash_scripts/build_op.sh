@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -R /opstack-temp/* /opstack/
+mv /opstack-temp/* /opstack/
 
 # Run builder and replace files
 cd /opstack/tools/
