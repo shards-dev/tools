@@ -25,7 +25,7 @@ cp genesis.json ~/op-geth
 cp jwt.txt ~/op-geth
 
 # Initialize op-geth
-cd ~/op-geth
+cd /opstack/op-geth
 mkdir datadir
 echo "pwd" > datadir/password
 echo $PRIVATE_KEY_SEQUENCER > datadir/block-signer-key
