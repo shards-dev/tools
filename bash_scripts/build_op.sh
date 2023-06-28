@@ -34,6 +34,8 @@ if [ -z "$(ls -A /opstack/)" ]; then
     ./build/bin/geth account import --datadir=datadir --password=datadir/password datadir/block-signer-key
     build/bin/geth init --datadir=datadir genesis.json
     echo "Build Successful ✅"
+    exit 0
 else
     echo "The /opstack/ folder is not empty. Skipping the script."
+    exit 0
 fi
