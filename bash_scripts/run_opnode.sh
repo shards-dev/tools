@@ -1,11 +1,12 @@
 #!/bin/bash
 #heathcheck opgeth, and run
 
-if [ -z "$(ls -A /opstack/)" ]; then
-    echo "The /opstack/ folder is empty. Waiting for complete build..."
-    exit 1
-else
-    echo "The /opstack/ folder is not ready. Starting Opgeth."
+code=$(curl -s -o /dev/null -w "%{http_code}" 'http://localhost:8551')
+
+echo $code
+
+if [[ $code == 401 ]]; then
+    echo "Genesis file found. Starting Opnode."
     cd /opstack/optimism/op-node
     ./bin/op-node \
         --l2=http://localhost:8551 \
@@ -21,5 +22,6 @@ else
         --p2p.sequencer.key=$SEQ_KEY \
         --l1=$L1_RPC \
         --l1.rpckind=$RPC_KIND
-
+else
+    echo "Cannot detect OPGeth... Waiting..."
 fi

@@ -1,19 +1,17 @@
 #!/bin/bash
-ls /opstack
 
 if [ ! -f "/opstack/optimism/op-node/genesis.json" ]; then
-    echo "Installing Rollup..."
+    echo "Preparing files..."
     cp -R /opstack-temp/* /opstack/
-    echo "Files Copied"
-
     # Run builder and replace files
     cd /opstack/tools/
     node server.js
     cp /opstack/tools/builds/getting-started.json /opstack/optimism/packages/contracts-bedrock/deploy-config/getting-started.json
     cp /opstack/tools/builds/hardhat.config.ts /opstack/optimism/packages/contracts-bedrock/hardhat.config.ts
-    
+    echo "Files Ready"
+
     # Deploy Contracts: OK ✅
-    echo "Now deploying contracts... Please wait"
+    echo "Now deploying contracts..."
     cd /opstack/optimism/packages/contracts-bedrock
     npx hardhat deploy --network getting-started --tags l1
 
