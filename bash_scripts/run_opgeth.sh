@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ -z "$(ls -A /opstack/)" ]; then
-    echo "The /opstack/ folder is empty. Waiting for complete build..."
-    exit 1
+if [ -f "/opstack/optimism/op-node/genesis.json" ]; then
+    echo "Genesis file not found... Waiting ..."
+    exit 666
 else
-    echo "The /opstack/ folder is ready. Starting Opgeth."
+    echo "Found genesis file. Starting Geth."
     cd /opstack/op-geth
     ./build/bin/geth \
         --datadir ./datadir \
