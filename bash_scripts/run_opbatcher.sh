@@ -7,7 +7,7 @@ echo $code
 
 if [ "$code" = 200 ]; then
     echo "OpNode detected. Starting Batcher."
-    cd ~/optimism/op-batcher
+    cd /opstack/optimism/op-batcher
     ./bin/op-batcher \
     --l2-eth-rpc=http://opgeth:8545 \
     --rollup-rpc=http://opnode:8547 \
