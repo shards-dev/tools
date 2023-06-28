@@ -5,7 +5,7 @@ code=$(curl -s -o /dev/null -w "%{http_code}" 'http://opgeth:8551')
 echo "Code: "
 echo $code
 
-if [[ $code == 401 ]]; then
+if [ "$code" = 401 ]; then
     echo "Genesis file found. Starting Opnode."
     cd /opstack/optimism/op-node
     ./bin/op-node \
