@@ -1,4 +1,5 @@
 #!/bin/bash
+ls /opstack
 
 if [ -f "/opstack/optimism/op-node/genesis.json" ]; then
     echo "Installing Rollup..."
@@ -38,6 +39,6 @@ if [ -f "/opstack/optimism/op-node/genesis.json" ]; then
     echo "Build Successful ✅"
     exit 0
 else
-    echo "The /opstack/ folder is not empty. Skipping the script."
+    echo "Found genesis file. Not rebuilding."
     exit 0
 fi
