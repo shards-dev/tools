@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [ -z "$(ls -A /opstack/)" ]; then
+    echo "The /opstack/ folder is empty. Building..."
     mv /opstack-temp/* /opstack/
 
     # Run builder and replace files
@@ -32,6 +33,7 @@ if [ -z "$(ls -A /opstack/)" ]; then
     echo $PRIVATE_KEY_SEQUENCER > datadir/block-signer-key
     ./build/bin/geth account import --datadir=datadir --password=datadir/password datadir/block-signer-key
     build/bin/geth init --datadir=datadir genesis.json
+    echo "Build Successful ✅"
 else
     echo "The /opstack/ folder is not empty. Skipping the script."
 fi
