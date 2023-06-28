@@ -1,7 +1,7 @@
 #!/bin/bash
 ls /opstack
 
-if [ -f "/opstack/optimism/op-node/genesis.json" ]; then
+if [ ! -f "/opstack/optimism/op-node/genesis.json" ]; then
     echo "Installing Rollup..."
     cp -R /opstack-temp/* /opstack/
     echo "Files Copied"

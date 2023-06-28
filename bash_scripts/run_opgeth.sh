@@ -1,6 +1,7 @@
 #!/bin/bash
 
-if [ -f "/opstack/optimism/op-node/genesis.json" ]; then
+
+if [ ! -f "/opstack/optimism/op-node/genesis.json" ]; then
     echo "Genesis file not found... Waiting ..."
     exit 666
 else
