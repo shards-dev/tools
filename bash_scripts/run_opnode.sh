@@ -23,5 +23,5 @@ if [ "$code" = 401 ]; then
         --l1=$L1_RPC \
         --l1.rpckind=$RPC_KIND
 else
-    echo "Cannot detect OPGeth... Waiting..."
+    echo "Node cannot detect OPGeth... Waiting..."
 fi
