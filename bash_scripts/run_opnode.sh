@@ -6,32 +6,20 @@ if [ -z "$(ls -A /opstack/)" ]; then
     exit 1
 else
     echo "The /opstack/ folder is not ready. Starting Opgeth."
-    cd /opstack/op-geth
-    ./build/bin/geth \
-        --datadir ./datadir \
-        --http \
-        --http.corsdomain="*" \
-        --http.vhosts="*" \
-        --http.addr=0.0.0.0 \
-        --http.api=web3,debug,eth,txpool,net,engine \
-        --ws \
-        --ws.addr=0.0.0.0 \
-        --ws.port=8546 \
-        --ws.origins="*" \
-        --ws.api=debug,eth,txpool,net,engine \
-        --syncmode=full \
-        --gcmode=archive \
-        --nodiscover \
-        --maxpeers=0 \
-        --networkid=42069 \
-        --authrpc.vhosts="*" \
-        --authrpc.addr=0.0.0.0 \
-        --authrpc.port=8551 \
-        --authrpc.jwtsecret=./jwt.txt \
-        --rollup.disabletxpoolgossip=true \
-        --password=./datadir/password \
-        --allow-insecure-unlock \
-        --mine \
-        --miner.etherbase=$SEQUENCER_ADDRESS \
-        --unlock=$SEQUENCER_ADDRESS
+    cd /opstack/optimism/op-node
+    ./bin/op-node \
+        --l2=http://localhost:8551 \
+        --l2.jwt-secret=./jwt.txt \
+        --sequencer.enabled \
+        --sequencer.l1-confs=3 \
+        --verifier.l1-confs=3 \
+        --rollup.config=./rollup.json \
+        --rpc.addr=0.0.0.0 \
+        --rpc.port=8547 \
+        --p2p.disable \
+        --rpc.enable-admin \
+        --p2p.sequencer.key=$SEQ_KEY \
+        --l1=$L1_RPC \
+        --l1.rpckind=$RPC_KIND
+
 fi

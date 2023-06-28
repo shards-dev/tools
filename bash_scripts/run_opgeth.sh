@@ -4,7 +4,7 @@ if [ -z "$(ls -A /opstack/)" ]; then
     echo "The /opstack/ folder is empty. Waiting for complete build..."
     exit 1
 else
-    echo "The /opstack/ folder is not ready. Starting Opgeth."
+    echo "The /opstack/ folder is ready. Starting Opgeth."
     cd /opstack/op-geth
     ./build/bin/geth \
         --datadir ./datadir \
