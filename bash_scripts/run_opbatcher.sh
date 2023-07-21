@@ -3,7 +3,7 @@
 
 code=$(curl -s -o /dev/null -w "%{http_code}" 'http://opnode:8547')
 echo "Code: "
-echo $code
+echo 
 
 if [ "$code" = 200 ]; then
     echo "OpNode detected. Starting Batcher."
