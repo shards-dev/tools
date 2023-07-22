@@ -13,6 +13,7 @@ if [ ! -f "/opstack/optimism/op-node/genesis.json" ]; then
     # Deploy Contracts
     echo "Now deploying contracts..."
     cd /opstack/optimism/packages/contracts-bedrock
+    rm -rf deployments/*
     mkdir deployments/getting-started
     forge script scripts/Deploy.s.sol:Deploy --private-key $PRIVATE_KEY --broadcast --rpc-url $ETH_RPC_URL
     forge script scripts/Deploy.s.sol:Deploy --sig 'sync()' --private-key $PRIVATE_KEY --broadcast --rpc-url $ETH_RPC_URL
