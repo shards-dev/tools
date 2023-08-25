@@ -23,7 +23,7 @@ else
         --gcmode=archive \
         --nodiscover \
         --maxpeers=0 \
-        --networkid=42069 \
+        --networkid=$L2_CHAIN_ID \
         --authrpc.vhosts="*" \
         --authrpc.addr=0.0.0.0 \
         --authrpc.port=8551 \
