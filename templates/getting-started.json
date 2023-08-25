@@ -8,7 +8,7 @@
     "l1StartingBlockTag": "<%=process.env.L1STARTINGBLOCKTAG%>",
   
     "l1ChainID": <%=process.env.L1_CHAIN_ID%>,
-    "l2ChainID": <%=process.env.L2_CHAIN_ID%>,,
+    "l2ChainID": <%=process.env.L2_CHAIN_ID%>,
     "l2BlockTime": <%=process.env.L2_BLOCKTIME%>,
   
     "maxSequencerDrift": 600,
